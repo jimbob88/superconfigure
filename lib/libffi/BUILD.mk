@@ -2,6 +2,8 @@
 LIBFFI_SRC := https://github.com/libffi/libffi/archive/refs/tags/v3.5.2.tar.gz 
 
 LIBFFI_CONFIG_ARGS = --prefix=$$(COSMOS)\
+	--build=$$(ARCH)-linux-gnu\
+	--target=$$(ARCH)-linux-gnu\
     --disable-shared --enable-static\
     --without-pic --with-gnu-ld\
     --disable-exec-static-tramp\
