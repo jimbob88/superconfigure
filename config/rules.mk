@@ -24,25 +24,25 @@ o/%/patched: o/%/checked
 		$(PATCH_COMMAND) $(PATCH_FILE) $(ERRLOG)
 	touch $@
 
-o/%.x86_64: COSMOS=$(COSMOS_X86_64)
-o/%.x86_64: ARCH=x86_64
-o/%.x86_64: MODE=x86_64
-o/%.x86_64: CC=$(COSMOCC)/bin/x86_64-unknown-cosmo-cc
-o/%.x86_64: CXX=$(COSMOCC)/bin/x86_64-unknown-cosmo-c++
-o/%.x86_64: LD=$(COSMOCC)/bin/x86_64-unknown-cosmo-cc
-o/%.x86_64: AR=$(COSMOCC)/bin/x86_64-unknown-cosmo-ar
-o/%.x86_64: STRIP=$(COSMOCC)/bin/x86_64-unknown-cosmo-strip
-o/%.x86_64: OBJCOPY=$(COSMOCC)/bin/x86_64-unknown-cosmo-objcopy
+o/%.x86_64: export COSMOS:=$(COSMOS_X86_64)
+o/%.x86_64: export ARCH:=x86_64
+o/%.x86_64: export MODE:=x86_64
+o/%.x86_64: export CC:=$(COSMOCC)/bin/x86_64-unknown-cosmo-cc
+o/%.x86_64: export CXX:=$(COSMOCC)/bin/x86_64-unknown-cosmo-c++
+o/%.x86_64: export LD:=$(COSMOCC)/bin/x86_64-unknown-cosmo-cc
+o/%.x86_64: export AR:=$(COSMOCC)/bin/x86_64-unknown-cosmo-ar
+o/%.x86_64: export STRIP:=$(COSMOCC)/bin/x86_64-unknown-cosmo-strip
+o/%.x86_64: export OBJCOPY:=$(COSMOCC)/bin/x86_64-unknown-cosmo-objcopy
 
-o/%.aarch64: COSMOS=$(COSMOS_AARCH64)
-o/%.aarch64: ARCH=aarch64
-o/%.aarch64: MODE=aarch64
-o/%.aarch64: CC=$(COSMOCC)/bin/aarch64-unknown-cosmo-cc
-o/%.aarch64: CXX=$(COSMOCC)/bin/aarch64-unknown-cosmo-c++
-o/%.aarch64: LD=$(COSMOCC)/bin/aarch64-unknown-cosmo-cc
-o/%.aarch64: AR=$(COSMOCC)/bin/aarch64-unknown-cosmo-ar
-o/%.aarch64: STRIP=$(COSMOCC)/bin/aarch64-unknown-cosmo-strip
-o/%.aarch64: OBJCOPY=$(COSMOCC)/bin/aarch64-unknown-cosmo-objcopy
+o/%.aarch64: export COSMOS=$(COSMOS_AARCH64)
+o/%.aarch64: export ARCH=aarch64
+o/%.aarch64: export MODE=aarch64
+o/%.aarch64: export CC=$(COSMOCC)/bin/aarch64-unknown-cosmo-cc
+o/%.aarch64: export CXX=$(COSMOCC)/bin/aarch64-unknown-cosmo-c++
+o/%.aarch64: export LD=$(COSMOCC)/bin/aarch64-unknown-cosmo-cc
+o/%.aarch64: export AR=$(COSMOCC)/bin/aarch64-unknown-cosmo-ar
+o/%.aarch64: export STRIP=$(COSMOCC)/bin/aarch64-unknown-cosmo-strip
+o/%.aarch64: export OBJCOPY=$(COSMOCC)/bin/aarch64-unknown-cosmo-objcopy
 
 o/%/deps.x86_64: DEPS_COMMAND = $(DEPS_DEFAULT)
 o/%/deps.x86_64: o/%/patched
