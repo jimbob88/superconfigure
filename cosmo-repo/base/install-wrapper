@@ -3,8 +3,8 @@ set -e
 
 # copy headers into cosmocc
 
-mkdir -p "$COSMO"/cosmocc/include/third_party
-cd "$COSMO"/cosmocc/include/third_party
+mkdir -p "$COSMOS"/include/third_party
+cd "$COSMOS"/include/third_party
 
 SUBFOLDERS='
 zlib
