@@ -9,6 +9,8 @@ export RESULTS:=$(BASELOC)/results
 export ZIPCOPY:=$(COSMO)/o/tool/build/zipcopy
 export APELINK:=$(COSMO)/o/tool/build/apelink
 
+export COSMO_MAKE_FLAGS:=V=0 -s
+
 # basic functions
 include config/variables.mk
 include config/errlog.mk

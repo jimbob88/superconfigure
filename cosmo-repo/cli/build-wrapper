@@ -4,7 +4,7 @@ set -e
 export COSMOPOLITAN_DISABLE_ZIPOS=0
 
 cd "$COSMO"
-make MODE="$MODE" V=0 -s -j"$MAXPROC" \
+make MODE="$MODE" $COSMO_MAKE_FLAGS -j"$MAXPROC" \
     o/"$MODE"/examples/art\
     o/"$MODE"/examples/greenbean\
     o/"$MODE"/examples/hangman\
