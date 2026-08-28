@@ -1,22 +1,24 @@
 #!/bin/sh
 
 export COSMOPOLITAN_DISABLE_ZIPOS=1
-export ARCH=aarch64
-export MODE=aarch64
-export BASELOC=$(realpath "$PWD")
-export COSMO=$BASELOC/cosmopolitan
-export COSMOS=$BASELOC/cosmos/$ARCH
-export RESULTS=$BASELOC/results
-#export PKG_CONFIG_PATH="$COSMOS/lib/pkgconfig:$COSMOS/share/pkgconfig:$COSMOS/share/pkg-config"
-export PKG_CONFIG_LIBDIR="$COSMOS/lib/pkgconfig:$COSMOS/share/pkgconfig:$COSMOS/share/pkg-config"
+export ARCH="${ARCH:-aarch64}"
+export MODE="${MODE:-aarch64}"
+export BASELOC="${BASELOC:-$(realpath "$PWD")}"
+export COSMO="${COSMO:-$BASELOC/cosmopolitan}"
+export COSMOCC="${COSMOCC:-$COSMO/cosmocc}"
+export COSMOS="${COSMOS:-$BASELOC/cosmos/$ARCH}"
+export RESULTS="${RESULTS:-$BASELOC/results}"
+#export PKG_CONFIG_PATH=$COSMOS/lib/pkgconfig:$COSMOS/share/pkgconfig:$COSMOS/share/pkg-config
+export PKG_CONFIG_LIBDIR=$COSMOS/lib/pkgconfig:$COSMOS/share/pkgconfig:$COSMOS/share/pkg-config
 export ACLOCAL_PATH="$COSMOS/share/aclocal"
 
-PREFIX0="$COSMO/cosmocc/bin/$ARCH-unknown-cosmo"
-export CC=$PREFIX0-cc
-export CXX=$PREFIX0-c++
-PREFIX1="$COSMO/cosmocc/bin/$ARCH-linux-cosmo"
-export LD=$PREFIX1-ld
-export OBJCOPY=$PREFIX1-objcopy
-export AR=$PREFIX1-ar
-export STRIP=$PREFIX1-strip
-export ZIPCOPY=$COSMO/o/tool/build/zipcopy
+PREFIX0="$COSMOCC/bin/$ARCH-unknown-cosmo"
+export CC="${CC:-$PREFIX0-cc}"
+export CXX="${CXX:-$PREFIX0-c++}"
+PREFIX1="$COSMOCC/bin/$ARCH-linux-cosmo"
+export LD="${LD:-$PREFIX1-ld}"
+export OBJCOPY="${OBJCOPY:-$PREFIX1-objcopy}"
+export AR="${AR:-$PREFIX1-ar}"
+export STRIP="${STRIP:-$PREFIX1-strip}"
+export ZIPCOPY="${ZIPCOPY:-$COSMO/o/tool/build/zipcopy}"
+
