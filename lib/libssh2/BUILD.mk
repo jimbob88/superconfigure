@@ -6,6 +6,7 @@ LIBSSH2_CONFIG_ARGS = --enable-static --disable-shared\
     --without-pic --with-gnu-ld --disable-rpath\
     --disable-tests --disable-examples-build --disable-werror\
     --prefix=$$(COSMOS) --sysconfdir=$$(COSMOS)/etc --datarootdir=$$(COSMOS)/share\
+	  --host=$$(ARCH)-linux-gnu\
     CFLAGS="-Os -Wno-implicit-function-declaration"
 
 $(eval $(call DOWNLOAD_SOURCE,lib/libssh2,$(LIBSSH2_SRC)))
