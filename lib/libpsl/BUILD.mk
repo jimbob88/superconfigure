@@ -5,7 +5,8 @@ LIBPSL_CONFIG_ARGS = --disable-shared --enable-static\
 					 --prefix=$$(COSMOS)\
 					 --sysconfdir=$$(COSMOS)/share\
 					 --datarootdir=$$(COSMOS)/share\
-					 --disable-runtime
+					 --disable-runtime\
+					 --host=$$(ARCH)-linux-gnu
 
 $(eval $(call DOWNLOAD_SOURCE,lib/libpsl,$(LIBPSL_SRC)))
 $(eval $(call AUTOTOOLS_BUILD,lib/libpsl,$(LIBPSL_CONFIG_ARGS),$(LIBPSL_CONFIG_ARGS)))
