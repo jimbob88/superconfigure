@@ -7,7 +7,7 @@ export COSMOS_X86_64:=$(BASELOC)/cosmos/x86_64
 export COSMOS_AARCH64:=$(BASELOC)/cosmos/aarch64
 export RESULTS:=$(BASELOC)/results
 export ZIPCOPY:=$(COSMO)/o/tool/build/zipcopy
-export APELINK:=$(COSMO)/o/tool/build/apelink
+export APELINK_BIN:=$(COSMO)/o/tool/build/apelink
 
 export COSMO_MAKE_FLAGS:=V=0 -s
 
