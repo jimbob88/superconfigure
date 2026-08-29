@@ -20,7 +20,7 @@ cp -r "$BASELOC"/o/web/git/git*/* .
     --sysconfdir="$COSMOS/etc" --datarootdir="$COSMOS/share"\
     --with-pager=less --with-editor=vim  --with-shell=sh\
     --with-gitconfig="$COSMOS/gitconfig" --with-gitattributes="$COSMOS/gitattributes"\
-    --with-sane-tool-path=""\
+    --with-sane-tool-path="" --host="$ARCH"-linux-gnu\
    CFLAGS="-Os" LDFLAGS="-L$COSMOS/lib" 
 
 make -j"$MAXPROC"
