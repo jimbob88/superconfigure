@@ -10,5 +10,6 @@ alias ar="$AR"
     --sysconfdir="$COSMOS/share" --datarootdir="$COSMOS/share"\
     --with-ca-path="$COSMOS/share/ssl/certs" --without-ca-fallback\
     --without-pic --with-gnu-ld\
+    --host="$ARCH-linux-gnu"\
     CPPFLAGS="-D_COSMO_SOURCE"\
     CFLAGS="-Os -std=c11" LIBS="-lbrotlidec -lbrotlienc -lbrotlicommon -lz"
